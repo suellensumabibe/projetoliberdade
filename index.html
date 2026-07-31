@@ -214,6 +214,87 @@
   .card.primary .arrow{ color: var(--branco); }
   .card.primary:hover{ box-shadow: 0 8px 22px rgba(70,81,47,0.34); }
 
+  .book-card:hover{
+    transform: none;
+    box-shadow: 0 1px 2px rgba(44,43,34,0.05);
+  }
+
+  .book-card summary:hover{
+    opacity: 0.92;
+  }
+  .book-card{
+    display: block;
+    padding: 0;
+  }
+
+  .book-card summary{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .book-card summary::-webkit-details-marker{ display: none; }
+  .book-card summary::marker{ content: ""; }
+
+  .book-card .arrow{ transition: transform 0.2s ease; }
+  .book-card[open] .arrow{ transform: rotate(90deg); }
+  .book-card[open] summary{ padding-bottom: 8px; }
+
+  .book-panel{
+    padding: 4px 20px 22px;
+  }
+
+  .books-subhead{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--oliva);
+    text-transform: uppercase;
+    margin-top: 18px;
+    margin-bottom: 2px;
+  }
+
+  .book-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .book-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+    padding: 11px 2px;
+    border-bottom: 1px solid rgba(70,81,47,0.14);
+    transition: padding-left 0.2s ease, color 0.2s ease;
+  }
+
+  .book-list .book-row:last-child{ border-bottom: none; }
+
+  .book-row:hover{ padding-left: 6px; color: var(--oliva-escuro); }
+
+  .book-row .name{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--texto);
+  }
+
+  .book-row:hover .name{ color: var(--oliva-escuro); }
+
+  .book-row .go{
+    font-size: 14px;
+    color: var(--oliva-escuro);
+    min-width: 14px;
+    text-align: right;
+  }
+
   /* ---------- CARTA ---------- */
   .letter-section{
     padding: 20px 34px 10px;
@@ -381,26 +462,64 @@
       <div class="arrow">›</div>
     </a>
 
-    <a href="#" class="card">
-      <div class="icon">04</div>
-      <div class="txt">
-        <div class="title">Diário LIBERTAS</div>
-        <div class="sub">Reels, textos, reflexões, livros e exercícios — tudo organizado em um só lugar.</div>
-      </div>
-      <div class="arrow">›</div>
-    </a>
+    <details class="card book-card">
+      <summary>
+        <div class="icon">04</div>
+        <div class="txt">
+          <div class="title">Livros que mudaram minha mente</div>
+          <div class="sub">O que estou estudando e recomendo para essa jornada.</div>
+        </div>
+        <div class="arrow">›</div>
+      </summary>
 
-    <a href="#carta" class="card">
-      <div class="icon">05</div>
-      <div class="txt">
-        <div class="title">Uma Carta para Você</div>
-        <div class="sub">Palavras que escrevi pensando em você, de mulher para mulher.</div>
+      <div class="book-panel">
+        <div class="book-list">
+          <a href="https://link.amazon/B0iriC4EK" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Mindset</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0atsG3hy" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Hábitos Atômicos</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0fnFLnGX" target="_blank" rel="noopener" class="book-row">
+            <span class="name">A Psicologia Financeira</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0dXqKsiC" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Inteligência Emocional</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0bwoQpbp" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Campo de Batalha da Mente</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B03GYRnjH" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Uma Vida com Propósitos</span>
+            <span class="go">›</span>
+          </a>
+        </div>
+
+        <div class="books-subhead">devocionais</div>
+        <div class="book-list devocionais">
+          <a href="https://link.amazon/B04dmoZCt" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Devocional Mulheres</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0dJpmIDm" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Oi Deus, sou eu de novo</span>
+            <span class="go">›</span>
+          </a>
+          <a href="https://link.amazon/B0623jyb8" target="_blank" rel="noopener" class="book-row">
+            <span class="name">Café com Deus Pai</span>
+            <span class="go">›</span>
+          </a>
+        </div>
       </div>
-      <div class="arrow">›</div>
-    </a>
+    </details>
 
     <a href="https://wa.me/5585998160789" target="_blank" rel="noopener" class="card">
-      <div class="icon">06</div>
+      <div class="icon">05</div>
       <div class="txt">
         <div class="title">Fale comigo</div>
         <div class="sub">WhatsApp direto, para o que você precisar.</div>
