@@ -6,17 +6,17 @@
 <title>LIBERTAS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --branco: #FFFFFF;
-    --bege: #F5F0E6;
-    --bege-2: #ECE2CC;
-    --oliva: #707A52;
-    --oliva-escuro: #4F5A3B;
-    --oliva-suave: #B7BE9C;
-    --texto: #3C3B32;
-    --texto-suave: #6D6C5D;
+    --branco: #FBFAF5;
+    --bege: #F2ECDC;
+    --bege-2: #E2D6B4;
+    --oliva: #6A754C;
+    --oliva-escuro: #46512F;
+    --oliva-suave: #9CA579;
+    --texto: #2C2B22;
+    --texto-suave: #57564A;
   }
 
   *{ box-sizing: border-box; margin:0; padding:0; }
@@ -45,20 +45,13 @@
     text-align: center;
   }
 
-  .branch{
-    width: 78px;
-    height: auto;
-    margin: 0 auto 30px;
-    display: block;
-  }
-
   .photo-frame{
     width: 128px;
     height: 128px;
     margin: 0 auto 28px;
     border-radius: 50%;
     padding: 4px;
-    border: 1px solid var(--oliva-suave);
+    border: 1.5px solid var(--oliva);
   }
 
   .photo-frame .inner{
@@ -80,19 +73,12 @@
   }
 
   .photo-frame.no-photo img{ display: none; }
-
-  .photo-frame.no-photo .inner::after{
-    content: "L";
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 44px;
-    color: var(--oliva);
-  }
+  .photo-frame.no-photo .monogram{ display: flex; }
+  .monogram{ display: none; align-items: center; justify-content: center; width: 100%; height: 100%; }
 
   .brand{
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 40px;
     letter-spacing: 7px;
     color: var(--texto);
@@ -101,7 +87,7 @@
   .tagline{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 18px;
     color: var(--oliva-escuro);
     margin-top: 12px;
@@ -111,14 +97,14 @@
   .quote-box{
     margin: 36px 10px 0;
     padding: 26px 8px;
-    border-top: 1px solid var(--bege-2);
-    border-bottom: 1px solid var(--bege-2);
+    border-top: 1.5px solid var(--bege-2);
+    border-bottom: 1.5px solid var(--bege-2);
   }
 
   .quote-box p{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 17px;
     line-height: 1.7;
     color: var(--texto);
@@ -132,7 +118,7 @@
 
   .intro p{
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.9;
     color: var(--texto-suave);
     max-width: 360px;
@@ -141,7 +127,7 @@
 
   .welcome{
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 700;
     font-style: italic;
     font-size: 18px;
     color: var(--oliva-escuro);
@@ -158,91 +144,98 @@
 
   .card{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
     text-decoration: none;
     color: inherit;
-    padding: 18px 6px;
-    border-bottom: 1px solid var(--bege-2);
-    transition: padding-left 0.2s ease, border-color 0.2s ease;
+    padding: 20px 20px;
+    background: var(--bege);
+    border-radius: 5px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 1px 2px rgba(44,43,34,0.05);
   }
 
   .card:hover{
-    padding-left: 8px;
-    border-color: var(--oliva-suave);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(44,43,34,0.09);
   }
 
   .card .icon{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--oliva);
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--branco);
+    background: var(--oliva);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    margin-top: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid var(--oliva-suave);
   }
 
-  .card .txt{ flex: 1; }
+  .card .txt{ flex: 1; padding-top: 3px; }
 
   .card .title{
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 18px;
     color: var(--texto);
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    line-height: 1.3;
   }
 
   .card .sub{
     font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
+    font-weight: 500;
+    line-height: 1.55;
     color: var(--texto-suave);
   }
 
   .card .arrow{
-    font-size: 16px;
-    color: var(--oliva);
-    opacity: 0.6;
+    font-size: 17px;
+    color: var(--oliva-escuro);
+    opacity: 0.85;
+    margin-top: 5px;
   }
 
   /* Primary CTA */
   .card.primary{
-    background: var(--bege);
-    border: none;
-    padding: 20px 18px;
-    border-radius: 2px;
+    background: var(--oliva-escuro);
+    padding: 22px 20px;
+    box-shadow: 0 4px 14px rgba(70,81,47,0.28);
   }
-  .card.primary .icon{ background: var(--branco); border-color: var(--oliva); }
-  .card.primary .title{ color: var(--oliva-escuro); }
-  .card.primary:hover{ padding-left: 22px; }
+  .card.primary .icon{ background: var(--branco); color: var(--oliva-escuro); }
+  .card.primary .title{ color: var(--branco); }
+  .card.primary .sub{ color: rgba(251,250,245,0.78); }
+  .card.primary .arrow{ color: var(--branco); }
+  .card.primary:hover{ box-shadow: 0 8px 22px rgba(70,81,47,0.34); }
 
-  /* ---------- LIVROS ---------- */
-  .books-section{
-    padding: 10px 28px 10px;
+  /* ---------- CARTA ---------- */
+  .letter-section{
+    padding: 20px 34px 10px;
+    text-align: center;
   }
 
-  .books-section .divider{
+  .letter-section .divider{
     display: flex;
     align-items: center;
     gap: 14px;
-    margin: 22px 0 26px;
+    margin: 8px 0 34px;
   }
 
-  .books-section .divider::before,
-  .books-section .divider::after{
+  .letter-section .divider::before,
+  .letter-section .divider::after{
     content: "";
     flex: 1;
     height: 1px;
     background: var(--bege-2);
   }
 
-  .books-section .divider span{
+  .letter-section .divider span{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 10.5px;
@@ -251,73 +244,45 @@
     color: var(--texto-suave);
   }
 
-  .books-heading{
-    text-align: center;
+  .letter-heading{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--texto);
+    margin-bottom: 28px;
+  }
+
+  .letter-body p{
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 17px;
+    line-height: 1.85;
     color: var(--texto);
+    margin-bottom: 16px;
   }
 
-  .books-heading .cat{
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    color: var(--oliva);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .book-list{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .book-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    text-decoration: none;
-    color: inherit;
-    padding: 15px 4px;
-    border-bottom: 1px solid var(--bege-2);
-    transition: padding-left 0.2s ease, color 0.2s ease;
-  }
-
-  .book-list .book-row:last-child{ border-bottom: none; }
-
-  .book-row:hover{ padding-left: 8px; color: var(--oliva-escuro); }
-
-  .book-row .name{
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--texto);
-  }
-
-  .book-row:hover .name{ color: var(--oliva-escuro); }
-
-  .book-row .go{
-    font-size: 15px;
-    color: var(--oliva);
-    min-width: 16px;
-    text-align: right;
-  }
-
-  .books-subhead{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    color: var(--oliva);
-    text-transform: uppercase;
+  .letter-signoff{
     margin-top: 30px;
-    margin-bottom: 2px;
-    padding-left: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--oliva-escuro);
+    line-height: 1.8;
+  }
+
+  .letter-signoff .name{
+    font-weight: 700;
+    font-style: normal;
+    display: block;
+    margin-top: 2px;
+    font-size: 19px;
+  }
+
+  .letter-mark{
+    margin: 18px auto 0;
+    width: 46px;
   }
 
   /* ---------- FOOTER ---------- */
@@ -329,6 +294,7 @@
   footer .mark{
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
+    font-weight: 600;
     font-size: 14px;
     color: var(--texto-suave);
     letter-spacing: 0.4px;
@@ -348,23 +314,25 @@
 
   <!-- HERO -->
   <div class="hero">
-    <svg class="branch" viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 45 C 60 20, 140 20, 185 45" stroke="#707A52" stroke-width="1.2"/>
-      <g fill="#707A52">
-        <ellipse cx="35" cy="38" rx="7" ry="3.6" transform="rotate(-25 35 38)"/>
-        <ellipse cx="58" cy="27" rx="7" ry="3.6" transform="rotate(-15 58 27)"/>
-        <ellipse cx="84" cy="21" rx="7" ry="3.6" transform="rotate(-5 84 21)"/>
-        <ellipse cx="116" cy="21" rx="7" ry="3.6" transform="rotate(5 116 21)"/>
-        <ellipse cx="142" cy="27" rx="7" ry="3.6" transform="rotate(15 142 27)"/>
-        <ellipse cx="165" cy="38" rx="7" ry="3.6" transform="rotate(25 165 38)"/>
-      </g>
-      <circle cx="100" cy="52" r="3" fill="#707A52"/>
-    </svg>
-
-    <!-- Troque "foto.jpg" pela sua foto (mesma pasta do arquivo, ou uma URL). Enquanto não houver foto, aparece um monograma "L". -->
+    <!-- Troque "foto.jpg" pela sua foto (mesma pasta do arquivo, ou uma URL). Enquanto não houver foto, aparece o monograma. -->
     <div class="photo-frame">
       <div class="inner">
         <img src="foto.jpg" alt="Foto de perfil" onerror="this.parentElement.parentElement.classList.add('no-photo')">
+        <svg class="monogram" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(50,21) scale(0.34) translate(-100,-45)">
+            <path d="M15 45 C 60 20, 140 20, 185 45" stroke="#6A754C" stroke-width="1.6" fill="none"/>
+            <g fill="#6A754C">
+              <ellipse cx="35" cy="38" rx="7" ry="3.6" transform="rotate(-25 35 38)"/>
+              <ellipse cx="58" cy="27" rx="7" ry="3.6" transform="rotate(-15 58 27)"/>
+              <ellipse cx="84" cy="21" rx="7" ry="3.6" transform="rotate(-5 84 21)"/>
+              <ellipse cx="116" cy="21" rx="7" ry="3.6" transform="rotate(5 116 21)"/>
+              <ellipse cx="142" cy="27" rx="7" ry="3.6" transform="rotate(15 142 27)"/>
+              <ellipse cx="165" cy="38" rx="7" ry="3.6" transform="rotate(25 165 38)"/>
+            </g>
+            <circle cx="100" cy="52" r="3" fill="#6A754C"/>
+          </g>
+          <text x="50" y="66" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-style="italic" font-weight="700" font-size="52" fill="#6A754C">L</text>
+        </svg>
       </div>
     </div>
 
@@ -422,11 +390,11 @@
       <div class="arrow">›</div>
     </a>
 
-    <a href="#livros" class="card">
+    <a href="#carta" class="card">
       <div class="icon">05</div>
       <div class="txt">
-        <div class="title">Livros que mudaram minha mente</div>
-        <div class="sub">O que estou estudando e recomendo para essa jornada.</div>
+        <div class="title">Uma Carta para Você</div>
+        <div class="sub">Palavras que escrevi pensando em você, de mulher para mulher.</div>
       </div>
       <div class="arrow">›</div>
     </a>
@@ -442,61 +410,42 @@
 
   </div>
 
-  <!-- LIVROS -->
-  <div class="books-section" id="livros">
-    <div class="divider"><span>leituras</span></div>
+  <!-- CARTA -->
+  <div class="letter-section" id="carta">
+    <div class="divider"><span>uma carta para você</span></div>
 
-    <div class="books-heading">
-      <span class="cat">estante libertas</span>
-      Livros que mudaram minha mente
+    <div class="letter-heading">Talvez você já tenha esperado demais.</div>
+
+    <div class="letter-body">
+      <p>Talvez você tenha passado anos acreditando que precisava esperar alguém mudar sua vida.</p>
+      <p>Eu também pensei assim.</p>
+      <p>Até descobrir que liberdade não começa quando o dinheiro chega.</p>
+      <p>Ela começa quando uma mulher decide dar o primeiro passo.</p>
+      <p>Se essa decisão nasceu dentro de você...</p>
+      <p>Eu vou caminhar ao seu lado.</p>
     </div>
 
-    <div class="book-list">
-      <a href="https://link.amazon/B0iriC4EK" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Mindset</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0atsG3hy" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Hábitos Atômicos</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0fnFLnGX" target="_blank" rel="noopener" class="book-row">
-        <span class="name">A Psicologia Financeira</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0dXqKsiC" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Inteligência Emocional</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0bwoQpbp" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Campo de Batalha da Mente</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B03GYRnjH" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Uma Vida com Propósitos</span>
-        <span class="go">›</span>
-      </a>
+    <div class="letter-signoff">
+      Com carinho,
+      <span class="name">Suellen</span>
     </div>
 
-    <div class="books-subhead">devocionais</div>
-    <div class="book-list devocionais">
-      <a href="https://link.amazon/B04dmoZCt" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Devocional Mulheres</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0dJpmIDm" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Oi Deus, sou eu de novo</span>
-        <span class="go">›</span>
-      </a>
-      <a href="https://link.amazon/B0623jyb8" target="_blank" rel="noopener" class="book-row">
-        <span class="name">Café com Deus Pai</span>
-        <span class="go">›</span>
-      </a>
-    </div>
+    <svg class="letter-mark" viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 45 C 60 20, 140 20, 185 45" stroke="#6A754C" stroke-width="1.4"/>
+      <g fill="#6A754C">
+        <ellipse cx="35" cy="38" rx="7" ry="3.6" transform="rotate(-25 35 38)"/>
+        <ellipse cx="58" cy="27" rx="7" ry="3.6" transform="rotate(-15 58 27)"/>
+        <ellipse cx="84" cy="21" rx="7" ry="3.6" transform="rotate(-5 84 21)"/>
+        <ellipse cx="116" cy="21" rx="7" ry="3.6" transform="rotate(5 116 21)"/>
+        <ellipse cx="142" cy="27" rx="7" ry="3.6" transform="rotate(15 142 27)"/>
+        <ellipse cx="165" cy="38" rx="7" ry="3.6" transform="rotate(25 165 38)"/>
+      </g>
+      <circle cx="100" cy="52" r="3" fill="#6A754C"/>
+    </svg>
   </div>
 
   <footer>
-    <div class="mark">by <span>LIBERTAS</span> · um passo de cada vez</div>
+    <div class="mark">LIBERTAS · um passo de cada vez</div>
   </footer>
 
 </div>
